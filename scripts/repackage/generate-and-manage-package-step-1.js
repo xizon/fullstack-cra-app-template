@@ -7,7 +7,8 @@
 const glob = require('glob');
 const fs = require('fs');
 const path = require('path');
-const json = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../package.json')));
+const configPath = path.resolve(__dirname, '../../package.json');
+const json = JSON.parse(fs.readFileSync(configPath));
 
 // Document that .nojekyll file is required when publishing to GitHub Pages
 // ----------------------------------
@@ -17,7 +18,6 @@ const currPath = path.resolve(__dirname, outputDir);
 const newPath = path.resolve(__dirname, '../../my-package/');
 const iteratesPackagePath = path.resolve(__dirname, '../../my-package/**/**.+(html|js|css|json)');
 
-console.log(iteratesPackagePath);
 
 const getPackageFilePath = (filename) => {
     return path.resolve(__dirname, '../../my-package/' + filename);
@@ -28,7 +28,7 @@ const getPackageFilePath = (filename) => {
 // ----------------------------------
 if (fs.existsSync(newPath)) {
     fs.rmSync(newPath, { recursive: true });
-    console.log('\x1b[36m%s\x1b[0m', `--> Deleted "my-package" successfully`);
+    console.log('\x1b[36m%s\x1b[0m', `--> (Step 1)  Deleted "my-package" successfully`);
 }
 
 
@@ -36,14 +36,14 @@ if (fs.existsSync(newPath)) {
 // ----------------------------------
 if (!fs.existsSync(targetPath) && fs.existsSync(currPath)) {
     fs.writeFileSync(targetPath, '');
-    console.log('\x1b[36m%s\x1b[0m', `--> Created ".nojekyll" successfully`);
+    console.log('\x1b[36m%s\x1b[0m', `--> (Step 1)  Created "build/.nojekyll" successfully`);
 }
 
 // change the folder name to what you want
 // ----------------------------------
 if (fs.existsSync(currPath)) {
     fs.renameSync(currPath, newPath);
-    console.log('\x1b[36m%s\x1b[0m', `--> Successfully renamed the directory to "my-package"`);
+    console.log('\x1b[36m%s\x1b[0m', `--> (Step 1)  Successfully renamed the directory "build" to "my-package"`);
 
 
     // iterates over all folders and files
@@ -72,18 +72,25 @@ if (fs.existsSync(currPath)) {
                     if (err) return console.log(err);
                 });
 
+                // move some files
+                fs.copyFile(configPath, getPackageFilePath('package.json'), (err) => {
+                    if (err) return console.log(err);
+                    if ( index === 0 ) console.log('\x1b[36m%s\x1b[0m', `--> (Step 1)  "package.json" was copied to "my-package/package.json"`);
+                  });
+                  
+
                 // delete some files
                 if ( file.indexOf( '404.html' ) ) {
                     fs.rm( getPackageFilePath('404.html'), { force: true }, (err) => {
                         if (err) return console.log(err);
                     });  
-                    if ( index === 0 ) console.log('\x1b[36m%s\x1b[0m', `--> Deleted "404.html" successfully`);
+                    if ( index === 0 ) console.log('\x1b[36m%s\x1b[0m', `--> (Step 1)  Deleted "my-package/404.html" successfully`);
                 }
                 if ( file.indexOf( '.nojekyll' ) ) {
                     fs.rm( getPackageFilePath('.nojekyll'), { force: true }, (err) => {
                         if (err) return console.log(err);
                     });  
-                    if ( index === 0 ) console.log('\x1b[36m%s\x1b[0m', `--> Deleted ".nojekyll" successfully`);
+                    if ( index === 0 ) console.log('\x1b[36m%s\x1b[0m', `--> (Step 1)  Deleted "my-package/.nojekyll" successfully`);
                 }
                 
 
@@ -98,6 +105,7 @@ if (fs.existsSync(currPath)) {
         // ----------------------------------
         fs.rm( getPackageFilePath('server/'), { recursive: true }, (err) => {
             if (err) return console.log(err);
+            console.log('\x1b[36m%s\x1b[0m', `--> (Step 1)  Deleted "my-package/server" successfully`);
         });
 
 
