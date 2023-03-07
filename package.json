@@ -2,7 +2,17 @@
   "author": "UIUX Lab",
   "email": "uiuxlab@gmail.com",
   "name": "fullstack-cra-app-template",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "A CRA-based template that can customize webpack configuration and node.js scripts.",
+  "main": "custom.webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xizon/fullstack-cra-app-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xizon/fullstack-cra-app-template/issues"
+  },
+  "homepage": "http://.",
   "keywords": [
     "CRA",
     "create-react-app",
@@ -12,21 +22,6 @@
     "webpack"
   ],
   "license": "MIT",
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.14",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "sass": "^1.58.3",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
     "start": "node custom.webpack.config.js && react-scripts start",
     "build": "node custom.webpack.config.js && react-scripts build",
@@ -52,17 +47,22 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.14",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "react-scripts": "5.0.1",
+    "sass": "^1.58.3",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4",
     "adm-zip": "^0.5.10"
-  },
-  "description": "A CRA-based template that can customize webpack configuration and node.js scripts.",
-  "main": "custom.webpack.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xizon/fullstack-cra-app-template.git"
-  },
-  "bugs": {
-    "url": "https://github.com/xizon/fullstack-cra-app-template/issues"
-  },
-  "homepage": "http://."
+  }
 }
