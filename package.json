@@ -29,12 +29,6 @@
     "eject": "react-scripts eject",
     "export": "node custom.webpack.config.js && react-scripts build && node scripts/repackage/generate-and-manage-package-step-1.js && node scripts/repackage/generate-and-manage-package-step-2.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
