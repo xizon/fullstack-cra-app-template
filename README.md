@@ -70,11 +70,42 @@ $ npm run build
 $ npm run export
 ```
 
-
 ### Even More
 
 
 For related operation commands, please refer to [create-react-app](https://create-react-app.dev/)
+
+
+## ⚙️ Custom Configuration of Build
+
+Excluding dependencies from the output bundles, you could change the `package.json` like this:
+
+The `buildConfig` property will be linked to the Webpack configuration.
+
+```json
+{
+    ...
+    "buildConfig": {
+        "externals": {
+            "react": "React",
+            "react-dom": "ReactDOM"
+        }
+    },
+    ...
+}
+```
+
+If you want to cancel the external files setting, please change it to:
+
+```json
+{
+    ...
+    "buildConfig": {
+        "externals": ""
+    },
+    ...
+}
+```
 
 
 ## Supported development environment
