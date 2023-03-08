@@ -1,74 +1,74 @@
 {
-    "author": "UIUX Lab",
-    "email": "uiuxlab@gmail.com",
-    "name": "fullstack-cra-app-template",
-    "version": "0.0.4",
-    "description": "A CRA-based template that can customize webpack configuration and node.js scripts.",
-    "main": "custom.webpack.config.js",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/xizon/fullstack-cra-app-template.git"
-    },
-    "bugs": {
-        "url": "https://github.com/xizon/fullstack-cra-app-template/issues"
-    },
-    "homepage": "http://.",
-    "keywords": [
-        "CRA",
-        "create-react-app",
-        "react",
-        "template",
-        "fullstack",
-        "webpack"
+  "author": "UIUX Lab",
+  "email": "uiuxlab@gmail.com",
+  "name": "fullstack-cra-app-template",
+  "version": "0.0.4",
+  "description": "A CRA-based template that can customize webpack configuration and node.js scripts.",
+  "main": "custom.webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xizon/fullstack-cra-app-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xizon/fullstack-cra-app-template/issues"
+  },
+  "homepage": "http://.",
+  "keywords": [
+    "CRA",
+    "create-react-app",
+    "react",
+    "template",
+    "fullstack",
+    "webpack"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "start": "node custom.webpack.config.js && react-scripts start",
+    "build": "node custom.webpack.config.js && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "export": "node custom.webpack.config.js && react-scripts build && node scripts/repackage/generate-and-manage-package-step-1.js && node scripts/repackage/generate-and-manage-package-step-2.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ],
-    "license": "MIT",
-    "scripts": {
-        "start": "node custom.webpack.config.js && react-scripts start",
-        "build": "node custom.webpack.config.js && react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
-        "export": "node custom.webpack.config.js && react-scripts build && node scripts/repackage/generate-and-manage-package-step-1.js && node scripts/repackage/generate-and-manage-package-step-2.js"
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "buildConfig": {
-        "externals": {
-            "react": "React",
-            "react-dom": "ReactDOM"
-        }
-    },
-    "dependencies": {
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
-    },
-    "devDependencies": {
-        "@testing-library/jest-dom": "^5.16.5",
-        "@testing-library/react": "^13.4.0",
-        "@testing-library/user-event": "^13.5.0",
-        "@types/jest": "^27.5.2",
-        "@types/node": "^16.18.14",
-        "@types/react": "^18.0.28",
-        "@types/react-dom": "^18.0.11",
-        "react-scripts": "5.0.1",
-        "sass": "^1.58.3",
-        "typescript": "^4.9.5",
-        "web-vitals": "^2.1.4",
-        "adm-zip": "^0.5.10"
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "buildConfig": {
+    "externals": {
+      "react": "React",
+      "react-dom": "ReactDOM"
     }
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.14",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "react-scripts": "5.0.1",
+    "sass": "^1.58.3",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4",
+    "adm-zip": "^0.5.10"
+  }
 }
