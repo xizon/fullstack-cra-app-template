@@ -2,7 +2,7 @@
   "author": "UIUX Lab",
   "email": "uiuxlab@gmail.com",
   "name": "fullstack-cra-app-template",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A CRA-based template that can customize webpack configuration and node.js scripts.",
   "main": "custom.webpack.config.js",
   "repository": {
