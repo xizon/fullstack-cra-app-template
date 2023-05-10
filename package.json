@@ -2,7 +2,7 @@
   "author": "UIUX Lab",
   "email": "uiuxlab@gmail.com",
   "name": "fullstack-cra-app-template",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A CRA-based template that can customize webpack configuration and node.js scripts.",
   "main": "custom.webpack.config.js",
   "repository": {
@@ -27,7 +27,7 @@
     "build": "node custom.webpack.config.js && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "export": "node custom.webpack.config.js && react-scripts build && node scripts/repackage/generate-and-manage-package-step-1.js && node scripts/repackage/generate-and-manage-package-step-2.js"
+    "export": "node custom.webpack.config.js && react-scripts build && node scripts/repackage/generate-and-manage-package/step-1.js && node scripts/repackage/generate-and-manage-package/step-2.js && node scripts/repackage/generate-and-manage-package/step-3.js"
   },
   "browserslist": {
     "production": [
@@ -48,6 +48,7 @@
     }
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -59,10 +60,10 @@
     "@types/node": "^16.18.14",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "adm-zip": "^0.5.10",
     "react-scripts": "5.0.1",
     "sass": "^1.58.3",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4",
-    "adm-zip": "^0.5.10"
+    "web-vitals": "^2.1.4"
   }
 }
