@@ -61,6 +61,13 @@ $ npm run start
 $ npm run build 
 ```
 
+> **Disable source map**
+>
+> ```sh
+> $ cross-env GENERATE_SOURCEMAP=false react-scripts build
+> ```
+
+
 
 ### Export to zip file
 
